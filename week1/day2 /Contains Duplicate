@@ -1,0 +1,17 @@
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        if(nums.size()==1) {
+            return false;
+        }
+        int beg=0;
+        while(beg<=nums.size()-2) {
+            if(nums[beg]==nums[beg+1]) {
+                 return true;
+            }
+            beg++;
+        }
+        return false;
+    }
+};
