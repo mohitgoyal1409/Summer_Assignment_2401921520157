@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int diagonalSum(vector<vector<int>>& mat) {
+        int row = mat.size();
+        int col = mat[0].size();
+        int sizes = row*col;
+        int i = 0;
+        int j = col-1;
+        int sum = 0;
+        while(i<row && j>=0) {
+            sum = sum + mat[i][j];
+            i++;
+            j--;
+        }
+        i = 0;
+        j = 0;
+        while(i<row && j<col) {
+            sum = sum + mat[i][j];
+            i++;
+            j++;
+        }
+        if(sizes%2!=0) {
+          sum  = sum - mat[row/2][col/2];
+        }
+        return sum;
+    }
+};
