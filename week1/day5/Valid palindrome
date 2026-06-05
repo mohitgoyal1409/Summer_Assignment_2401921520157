@@ -1,0 +1,31 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int i=0;
+        bool b=true;
+        string ans="";
+        int l=s.length(); 
+        
+        while(i<l) {
+           if((s[i] >= 'A' && s[i] <='Z')  ||  (s[i]>='a' && s[i]<='z') || isdigit(s[i])){
+	              char ch= tolower(s[i]);
+                  ans.push_back(ch);
+                  i++;
+            }
+            else {
+            i++; 
+            }
+         }
+        
+        i=0;
+        int j=ans.size()-1;
+        while(i<j) {
+            if(ans[i]!=ans[j]) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+};
